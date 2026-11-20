@@ -1,0 +1,7 @@
+# Local deployment scripts with server credentials
+deploy_live.py
+*.bat
+
+# Archives and backup files
+*.zip
+*.backup.html

@@ -1,0 +1,19 @@
+# G Flexipack — clean URLs
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Trailing slash for extensionless paths (not files)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteCond %{REQUEST_URI} !\.
+  RewriteRule ^(.+)$ /$1/ [R=301,L]
+
+  # Serve index.html inside directories
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
