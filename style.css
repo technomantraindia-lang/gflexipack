@@ -67,11 +67,11 @@ a {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(59, 42, 32, 0.96);
-  color: var(--cream);
+  background: #f4efe7;
+  color: #3b2a20;
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
-  border-bottom: 1px solid rgba(244, 239, 231, 0.14);
+  border-bottom: 1px solid rgba(59, 42, 32, 0.12);
 }
 
 .nav-inner {
@@ -87,9 +87,9 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  background: var(--cream);
-  padding: 6px 14px;
-  border-radius: 10px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
 .brand img {
@@ -110,7 +110,7 @@ a {
 .nav-links a {
   position: relative;
   padding: 6px 0;
-  color: var(--cream);
+  color: #3b2a20;
   opacity: 0.82;
   transition: opacity 0.2s ease;
 }
@@ -141,17 +141,18 @@ a {
   align-items: center;
   gap: 8px;
   padding: 10px 18px;
-  border: 1px solid var(--cream);
+  border: 1px solid #3b2a20;
   border-radius: 999px;
-  color: var(--cream);
+  background: #3b2a20;
+  color: #f4efe7;
   font-size: 14px;
   font-weight: 500;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .nav-cta:hover {
-  background: var(--cream);
-  color: var(--ink);
+  background: transparent;
+  color: #3b2a20;
 }
 
 .arrow {
@@ -499,6 +500,7 @@ button:hover .arrow {
        2 · WELCOME
        ============================================================ */
 .welcome {
+  padding-top: 56px;
   padding-bottom: 40px;
 }
 
@@ -2503,7 +2505,7 @@ button:hover .arrow {
        banner slider, product rail and elsewhere on this page.
        ============================================================ */
 .hh-hero {
-  padding: 40px 0 0;
+  padding: 28px 0 0;
 }
 
 .hh-hero-inner {
@@ -2511,10 +2513,10 @@ button:hover .arrow {
   margin: 0 auto;
   padding: 0 56px;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 80px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
   align-items: center;
-  min-height: 620px;
+  min-height: 540px;
 }
 
 .hh-eyebrow {
@@ -2526,7 +2528,7 @@ button:hover .arrow {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin: 0 0 32px;
+  margin: 0 0 20px;
 }
 
 .hh-eyebrow::before {
@@ -2539,10 +2541,10 @@ button:hover .arrow {
 .hh-hero-title {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(44px, 6vw, 86px);
+  font-size: clamp(44px, 5.4vw, 76px);
   line-height: 1.02;
   letter-spacing: -0.02em;
-  margin: 0 0 28px;
+  margin: 0 0 18px;
   max-width: 12ch;
 }
 
@@ -2556,8 +2558,8 @@ button:hover .arrow {
   font-size: 18px;
   line-height: 1.55;
   color: var(--ink-soft);
-  max-width: 480px;
-  margin: 0 0 36px;
+  max-width: 540px;
+  margin: 0 0 28px;
 }
 
 .hh-hero-ctas {
@@ -2602,16 +2604,45 @@ button:hover .arrow {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
-  height: 660px;
   position: relative;
   --hh-tile-h: 200px;
   --hh-tile-gap: 14px;
+}
+
+.hh-col-block {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hh-col-label {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 
 .hh-col {
   overflow: hidden;
   position: relative;
   border-radius: 8px;
+  height: 540px;
+}
+
+/* Formats column only: full pouch visible, light grey box */
+.hh-col-block:first-child .hh-tile {
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.06) 0%, rgba(0, 0, 0, 0) 60%),
+    #e9e6e0;
+}
+
+.hh-col-block:first-child .hh-photo {
+  object-fit: contain;
+  object-position: center;
+  padding: 18px 16px 36px;
+  box-sizing: border-box;
 }
 
 .hh-col::before,
@@ -2823,7 +2854,7 @@ button:hover .arrow {
 .hh-meta {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 24px 56px 40px;
+  padding: 24px 56px 24px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
@@ -2873,10 +2904,13 @@ button:hover .arrow {
   }
 
   .hh-marquee {
-    height: 440px;
     gap: 12px;
     --hh-tile-h: 200px;
     --hh-tile-gap: 12px;
+  }
+
+  .hh-col {
+    height: 440px;
   }
 
   .hh-col::before,
